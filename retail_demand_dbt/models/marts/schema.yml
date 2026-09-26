@@ -1,0 +1,33 @@
+version: 2
+
+models:
+
+  - name: retail_demand_mart
+    description: "Clean weekly retail demand mart used for downstream forecasting."
+
+    columns:
+
+      - name: item_id
+        description: "Unique product identifier."
+        data_tests:
+          - not_null
+
+      - name: store_id
+        description: "Store identifier."
+        data_tests:
+          - not_null
+
+      - name: week_start
+        description: "Start date of the sales week."
+        data_tests:
+          - not_null
+
+      - name: total_sales
+        description: "Total units sold during the week."
+        data_tests:
+          - not_null
+
+      - name: selling_day_ratio
+        description: "Ratio of days with sales to total observed days."
+        data_tests:
+          - not_null
