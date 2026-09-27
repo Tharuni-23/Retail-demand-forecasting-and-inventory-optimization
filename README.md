@@ -51,3 +51,62 @@ sales_train_evaluation.csv
 calendar.csv
 sell_prices.csv
 sample_submission.csv
+
+```
+# 🏗️ Project Architecture
+
+The project follows an end-to-end data pipeline from raw M5 retail data to demand forecasting and inventory optimization.
+
+```text
+M5 Forecasting Dataset
+        │
+        ▼
+   Raw M5 Data
+        │
+        ▼
+Python Data Preprocessing
+        │
+        ├──────────────────────┐
+        ▼                      ▼
+Data Quality Checks      Data Formatting
+        │                      │
+        └──────────┬───────────┘
+                   ▼
+          Google BigQuery
+             m5_retail
+                   │
+                   ▼
+             dbt Sources
+                   │
+                   ▼
+          dbt Staging Models
+        ┌──────────┼──────────┐
+        ▼          ▼          ▼
+ stg_calendar  stg_sales  stg_sell_prices
+        │          │          │
+        └──────────┼──────────┘
+                   ▼
+              daily_sales
+                   │
+             ┌─────┴─────┐
+             ▼           ▼
+       weekly_sales  monthly_sales
+             │
+             ▼
+      retail_demand_mart
+             │
+             ▼
+     Time-Series Forecasting
+        ┌────┴────┐
+        ▼         ▼
+     Prophet   LightGBM
+        │         │
+        └────┬────┘
+             ▼
+      Demand Forecasts
+             │
+             ▼
+   Inventory Optimization
+             │
+             ▼
+    Dashboard & Reporting
