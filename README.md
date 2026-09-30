@@ -35,6 +35,19 @@ raw_calendar  sales_validation_long  raw_sell_prices
         dbt Transformation
 
 ```
+## 🛠️ Tools & Technologies
+
+| Tool | Purpose |
+|---|---|
+| Google Cloud Platform | Cloud project and BigQuery environment |
+| Google BigQuery | Cloud data warehouse |
+| Python | Data preprocessing and ETL |
+| Pandas | Data manipulation and validation |
+| PyArrow | Parquet processing |
+| Google Cloud BigQuery Client | Programmatic data loading |
+| dbt | Data transformation and modeling |
+| Google Cloud OAuth | Authentication |
+
 
 # 🏗️ Week 2 — Data Transformation with dbt
 
