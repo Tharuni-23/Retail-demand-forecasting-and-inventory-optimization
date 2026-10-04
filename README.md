@@ -158,27 +158,23 @@ and identifying the most important demand-driving features.
 ```
 
 ## 🧠 Forecasting Models
+  | Model / Purpose |
+  |---|---|
+  | **Prophet** |                             | Time-series forecasting baseline using trend and seasonality |
 
-  -----------------------------------------------------------------------
-  Model                               Purpose
-  ----------------------------------- -----------------------------------
-  Prophet                             Time-series forecasting baseline
-                                      using trend and seasonality
-
-  LightGBM                            Machine-learning demand forecasting
-                                      using engineered features
+  |**LightGBM**|                          | Machine-learning demand forecasting using engineered features |  
   -----------------------------------------------------------------------
 
-## 🔧 Tools & Technologies
+## 🛠️ Tools & Technologies
 
-  Tool / Technology   Purpose
-  ------------------- ---------------------------------------
-  Python              Forecasting and model development
-  Pandas              Data preparation and manipulation
-  NumPy               Numerical calculations
-  Prophet             Time-series forecasting baseline
-  LightGBM            Gradient-boosting demand forecasting
-  Scikit-learn        Model evaluation metrics
-  Matplotlib          Forecast visualization
-  Jupyter Notebook    Experimentation and model development
-  M5 Dataset          Retail demand forecasting data
+| Tool / Technology | Purpose |
+|---|---|
+| **Python** | Forecasting and model development |
+| **Pandas** | Data preparation and manipulation |
+| **NumPy** | Numerical calculations |
+| **Prophet** | Time-series forecasting baseline |
+| **LightGBM** | Gradient-boosting demand forecasting |
+| **Scikit-learn** | Model evaluation metrics |
+| **Matplotlib** | Forecast visualization |
+| **Jupyter Notebook** | Experimentation and model development |
+| **M5 Dataset** | Retail demand forecasting data |
