@@ -107,3 +107,137 @@ raw_calendar    sales_validation_long   raw_sell_prices
 | **Data Mart** | `retail_demand_mart` | Create a clean forecasting-ready weekly dataset |
 | **Data Quality Testing** | dbt Tests | Validate important fields such as IDs, dates, and sales values |
 | **Documentation** | dbt Docs | Document models, dependencies, and data lineage |
+
+
+# 📈 Week 3 --- Demand Forecasting & Model Evaluation
+
+Week 3 focuses on building demand forecasting models using the M5 retail
+dataset, evaluating their performance, comparing forecasting approaches,
+and identifying the most important demand-driving features.
+
+## Week 3 Architecture
+
+``` text
+                    M5 Retail Sales Dataset
+                              │
+                              ▼
+                    Product-Store Selection
+                     FOODS_3_090 — CA_3
+                              │
+                ┌─────────────┴─────────────┐
+                ▼                           ▼
+       Time Series Preparation       Feature Engineering
+                │                           │
+                ▼                           ├── Calendar Features
+             Prophet                      ├── Price Features
+                │                         ├── Event Features
+                ▼                         ├── Lag Features
+        30-Day Forecast                  └── Rolling Features
+                │                           │
+                │                           ▼
+                │                      LightGBM Model
+                │                           │
+                └─────────────┬─────────────┘
+                              ▼
+                    30-Day Test Evaluation
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │ MAE / RMSE / WMAPE     │
+                 └─────────────────────────┘
+                              │
+                              ▼
+                    Model Comparison
+                 Prophet vs LightGBM
+                              │
+                              ▼
+                    Feature Importance
+                              │
+                              ▼
+                  Forecast Results Saved
+```
+
+## 🧠 Forecasting Models
+  | Model / Purpose |
+  |---|---|
+  | **Prophet** |                             | Time-series forecasting baseline using trend and seasonality |
+
+  |**LightGBM**|                          | Machine-learning demand forecasting using engineered features |  
+  -----------------------------------------------------------------------
+
+## 🛠️ Tools & Technologies
+
+| Tool / Technology | Purpose |
+|---|---|
+| **Python** | Forecasting and model development |
+| **Pandas** | Data preparation and manipulation |
+| **NumPy** | Numerical calculations |
+| **Prophet** | Time-series forecasting baseline |
+| **LightGBM** | Gradient-boosting demand forecasting |
+| **Scikit-learn** | Model evaluation metrics |
+| **Matplotlib** | Forecast visualization |
+| **Jupyter Notebook** | Experimentation and model development |
+| **M5 Dataset** | Retail demand forecasting data |
+
+
+
+# 🚀 Week 4 — Dashboard & Inventory Optimization
+
+Week 4 focuses on transforming the forecasting results from Week 3 into an interactive **Streamlit dashboard** and implementing **inventory optimization and what-if analysis**.
+
+---
+
+## 🏗️ Week 4 Architecture
+
+```text
+                    FROM WEEK 3 
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │  Forecast Results    │
+              │                      │
+              │  Prophet Forecast    │
+              │  LightGBM Forecast   │
+              │  Model Comparison    │
+              └──────────┬───────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │    STREAMLIT APP     │
+              │       app.py         │
+              └──────────┬───────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+   ┌────────────┐ ┌─────────────┐ ┌──────────────┐
+   │    KPI     │ │  Forecast   │ │    Model     │
+   │ Dashboard  │ │ Visualization│ │  Comparison │
+   └────────────┘ └─────────────┘ └──────────────┘
+          │              │              │
+          └──────────────┼──────────────┘
+                         ▼
+              ┌──────────────────────┐
+              │ Inventory Optimization│
+              └──────────┬───────────┘
+                         │
+          ┌──────────────┼──────────────┐
+          ▼              ▼              ▼
+   ┌────────────┐ ┌─────────────┐ ┌──────────────┐
+   │   Safety   │ │   Reorder   │ │    Stock     │
+   │   Stock    │ │    Point    │ │ Requirement  │
+   └────────────┘ └─────────────┘ └──────────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │    What-If Analysis  │
+              │                      │
+              │  Demand Change       │
+              │  Price Change        │
+              │  Lead Time Change    │
+              └──────────┬───────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │  Business Insights   │
+              │ & Recommendations    │
+              └──────────────────────┘
