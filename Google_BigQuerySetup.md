@@ -516,3 +516,23 @@ Connect dbt
         ↓
 Ready for dbt Transformation
 ```
+
+
+## Forecast Outputs in BigQuery
+
+The Prophet and LightGBM forecast results are stored in BigQuery under the `m5_retail` dataset.
+
+| Table | Rows | Description |
+|---|---:|---|
+| `prophet_forecasts` | 30 | Prophet predictions with lower and upper prediction bounds |
+| `lightgbm_forecasts` | 30 | LightGBM predictions alongside actual values |
+
+**Fully qualified table names:**
+- `swift-casing-509808-a7.m5_retail.prophet_forecasts`
+- `swift-casing-509808-a7.m5_retail.lightgbm_forecasts`
+
+**Loading script:** `retail_demand_dbt/Scripts/load_forecasts_to_bigquery.py`
+
+The loading script uses schema autodetection and replaces the destination table contents when rerun, preventing duplicate forecast rows.
+
+**Verification:** Both tables were checked successfully for row counts and column schemas.
