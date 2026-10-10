@@ -1,0 +1,3 @@
+Model,MAE,RMSE,WMAPE (%)
+Prophet,47.06,56.87,40.11
+LightGBM,24.3,32.89,20.71

@@ -1,0 +1,9 @@
+.venv/
+.vscode/
+__pycache__/
+
+DATA/PROCESSED/*.parquet
+# dbt generated files
+target/
+logs/
+

@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: m5_retail
+    database: swift-casing-509808-a7
+    schema: m5_retail
+
+    tables:
+      - name: raw_calendar
+      - name: sales_validation_long
+      - name: raw_sell_prices
