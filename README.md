@@ -23,35 +23,31 @@ The project includes an interactive Streamlit dashboard, forecast diagnostics, d
 
 ![Dashboard](screenshots/dashboard.png)
 
-### 2. Dataset Overview
-
-![Dataset Overview](screenshots/Dataset%20Overview.png)
-
-### 3. Demand Forecasting
+### 2. Demand Forecasting
 
 ![Demand Forecasting](screenshots/demand-forecasting.png)
 
-### 4. Model Comparison
+### 3. Model Comparison
 
 ![Model Comparison](screenshots/model-comparison.png)
 
-### 5. Inventory Optimization
+### 4. Inventory Optimization
 
 ![Inventory Optimization](screenshots/inventory-optimization.png)
 
-### 6. What-if Analysis
+### 5. What-if Analysis
 
 ![What-if Analysis](screenshots/what-if-analysis.png)
 
-### 7. Forecast Diagnostics
+### 6. Forecast Diagnostics
 
 ![Forecast Diagnostics](screenshots/forecast-diagnostics.png)
 
-### 8. Executive Report
+### 7. Executive Report
 
 ![Executive Report](screenshots/executive-report.png)
 
-### 9. Data Quality and Alerts
+### 8. Data Quality and Alerts
 
 ![Data Quality and Alerts](screenshots/data-quality-alerts.png)
 
