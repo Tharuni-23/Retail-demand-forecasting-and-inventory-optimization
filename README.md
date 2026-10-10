@@ -241,3 +241,74 @@ Week 4 focuses on transforming the forecasting results from Week 3 into an inter
               │  Business Insights   │
               │ & Recommendations    │
               └──────────────────────┘
+
+```
+
+## Week 4: Interactive Dashboard & Inventory Optimization
+
+### Objective
+Develop an interactive web dashboard to visualize retail demand forecasts, compare machine learning models, and estimate inventory requirements using the M5 retail sales dataset.
+
+### Tools & Technologies
+- **Python** — Data processing and inventory calculations
+- **Streamlit** — Interactive dashboard development
+- **Pandas** — Data loading and manipulation
+- **Prophet** — Time-series forecasting baseline
+- **LightGBM** — Machine learning-based demand forecasting
+- **Git & GitHub** — Version control and collaboration
+
+### Dashboard Modules
+
+**1. Retail Demand Dashboard**
+- Displays total demand and average daily demand for the evaluation period.
+- Identifies the best-performing model using WMAPE.
+- Presents recent forecast results and model metrics.
+
+**2. Demand Forecasting**
+- Visualizes actual demand against Prophet and LightGBM predictions.
+- Provides an interactive time-series chart for the selected product and store.
+- Displays forecast evaluation data for the 30-day test period.
+
+**3. Model Comparison**
+- Compares Prophet and LightGBM using MAE, RMSE, and WMAPE.
+- Displays model performance metrics and comparison charts.
+- LightGBM achieved lower error values than Prophet on the evaluated test period.
+
+**4. Inventory Optimization**
+- Estimates safety stock and reorder points.
+- Calculates recommended stock for a 30-day planning horizon.
+- Allows users to adjust supplier lead time, current inventory, and target service level.
+- Displays inventory status and additional stock requirements.
+
+**5. What-if Analysis**
+- Allows users to adjust assumed demand changes, supplier lead time, and price changes.
+- Recalculates inventory requirements under different scenarios.
+- Displays the price change as a scenario index; price elasticity is not yet modeled.
+
+### Model Evaluation Results
+
+| Model | MAE | RMSE | WMAPE |
+|---|---:|---:|---:|
+| Prophet | 47.06 | 56.87 | 40.11% |
+| LightGBM | 24.30 | 32.89 | 20.71% |
+
+*Evaluation metrics are based on the same 30-day historical holdout period for product FOODS_3_090 at store CA_3. They measure test-period performance, not future forecast accuracy.*
+
+### Application Execution
+
+Run the following command from the project root after activating the virtual environment:
+
+```bash
+streamlit run app.py
+```
+
+The dashboard will normally open at `http://localhost:8501`.
+
+### Week 4 Outcome
+Implemented an interactive Streamlit dashboard integrating demand visualization, model comparison, and baseline inventory-planning calculations.
+
+### Next Steps
+- Validate inventory estimates using the full historical demand series.
+- Extend forecasting to additional products and stores.
+- Integrate the processed data and analytical models into a broader inventory decision-support workflow.
+- Improve deployment and application documentation.
